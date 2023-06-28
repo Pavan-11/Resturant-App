@@ -1,8 +1,9 @@
-import React from 'react';
+import {Fragment} from 'react';
 import './App.css'
 import Header from './components/Layout/Header';
 import Summary from './components/Layout/Summary';
 import ListItems from './components/Meals/ListItems';
+import Cart from './components/Cart/CartItems';
 
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
     }
   ]
   return (
-    <>
+    <Fragment>
+      <Cart />
     <div>
       <Header />
     </div>
@@ -41,7 +43,7 @@ function App() {
       <Summary />
     </div>
     <ListItems DummyMealsList={DummyMealsList} />
-    </>
+    </Fragment>
     
   );
 }

@@ -1,6 +1,6 @@
 .meal-item-form {
-    justify-content: end;
-    align-items: end;
+    justify-content: flex-end;
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
     position: relative;
