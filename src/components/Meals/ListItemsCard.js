@@ -7,9 +7,9 @@ const ListItemsCard = (props) => {
         <>
             <div className='listitems'>
 
-                <div>{title}</div>
-                <div>{ingredients}</div>
-                <div>{price}</div>
+                <div><h3><strong>{title}</strong></h3></div>
+                <div style={{ color: "gray", fontStyle:'italic', fontWeight:'lighter' }}>{ingredients}</div>
+                <div style={{color:'brown',fontWeight:'bold'}}>{price}</div>
                 <hr></hr>
               
             </div>
