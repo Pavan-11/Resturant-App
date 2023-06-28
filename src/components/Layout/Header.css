@@ -21,7 +21,7 @@ nav {
     display: flex;
 }
 
-span {
+.cart-value{
     width: 15%;
     position: relative;
     left: 25px;

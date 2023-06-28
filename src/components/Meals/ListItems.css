@@ -1,0 +1,12 @@
+.listItems {
+    background-color: white;
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    left: 26%;
+    margin-top: 20px;
+    border-radius: 5px;
+}
