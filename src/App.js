@@ -1,4 +1,4 @@
-import {Fragment} from 'react';
+import {Fragment, useState} from 'react';
 import './App.css'
 import Header from './components/Layout/Header';
 import Summary from './components/Layout/Summary';
@@ -7,6 +7,16 @@ import Cart from './components/Cart/CartItems';
 
 
 function App() {
+  const [cartIsShow, setCartIsShown] = useState(false);
+
+  const IsShownHandler = () => {
+    setCartIsShown(true);
+  }
+
+  const IsHinddenHandler = () => {
+    setCartIsShown(false);
+  }
+
   const DummyMealsList = [
     {
       id: 1,
@@ -35,9 +45,9 @@ function App() {
   ]
   return (
     <Fragment>
-      <Cart />
+      {cartIsShow && <Cart onClose={IsHinddenHandler} />}
     <div>
-      <Header />
+      <Header onShowCart = {IsShownHandler} />
     </div>
     <div>
       <Summary />

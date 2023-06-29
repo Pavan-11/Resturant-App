@@ -16,7 +16,7 @@ p:nth-child(2){
     position: relative;
     left: 25px;
 }
-span {
+.summary-span{
     position: relative;
     left: 33%;
 }

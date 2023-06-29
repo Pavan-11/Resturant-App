@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 
-const Header = () => {
+const Header = (props) => {
     return(
         <>
         <nav>
@@ -9,7 +9,7 @@ const Header = () => {
                 <h1 className='heading-1'>ReactMeals</h1>
             </div>
             <div className='cart-button'>
-                <button type='button' className='btn-1'>Your Cart <span className='cart-value'>0</span></button>
+                <button type='button' className='btn-1' onClick={props.onShowCart}>Your Cart <span className='cart-value'>0</span></button>
             </div>
         </nav>
         </>
