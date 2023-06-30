@@ -1,60 +1,29 @@
-import {useState} from 'react';
-import './App.css'
+import { useState } from 'react';
+
 import Header from './components/Layout/Header';
-import Summary from './components/Layout/Summary';
-import ListItems from './components/Meals/ListItems';
+import Meals from './components/Meals/Meals';
 import Cart from './components/Cart/CartItems';
-import CartProvider from './Store/CartPeovider';
+import CartProvider from './Store/CartProvider';
 
 function App() {
-  const [cartIsShow, setCartIsShown] = useState(false);
+  const [cartIsShown, setCartIsShown] = useState(false);
 
-  const IsShownHandler = () => {
+  const showCartHandler = () => {
     setCartIsShown(true);
-  }
+  };
 
-  const IsHinddenHandler = () => {
+  const hideCartHandler = () => {
     setCartIsShown(false);
-  }
+  };
 
-  const DummyMealsList = [
-    {
-      id: 1,
-      title:'Sushi',
-      ingredients: 'Finest fish and veggies',
-      price: '$22.99'
-    },
-    {
-      id: 2,
-      title: 'Schnitxel',
-      ingredients: 'A german specialty',
-      price: '$16.50'
-    },
-    {
-      id: 3,
-      title: 'Barbecue Burger',
-      ingredients: 'American, raw, meaty ',
-      price: '$12.99'
-    },
-    {
-      id: 4,
-      title: 'Green Bowl',
-      ingredients: 'Healthy....and green...',
-      price: '$15.99'
-    }
-  ]
   return (
     <CartProvider>
-      {cartIsShow && <Cart onClose={IsHinddenHandler} />}
-    <div>
-      <Header onShowCart = {IsShownHandler} />
-    </div>
-    <div>
-      <Summary />
-    </div>
-    <ListItems DummyMealsList={DummyMealsList} />
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
+      <Header onShowCart={showCartHandler} />
+      <main>
+        <Meals />
+      </main>
     </CartProvider>
-    
   );
 }
 
