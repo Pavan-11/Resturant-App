@@ -1,10 +1,10 @@
-import {Fragment, useState} from 'react';
+import {useState} from 'react';
 import './App.css'
 import Header from './components/Layout/Header';
 import Summary from './components/Layout/Summary';
 import ListItems from './components/Meals/ListItems';
 import Cart from './components/Cart/CartItems';
-
+import CartProvider from './Store/CartPeovider';
 
 function App() {
   const [cartIsShow, setCartIsShown] = useState(false);
@@ -44,7 +44,7 @@ function App() {
     }
   ]
   return (
-    <Fragment>
+    <CartProvider>
       {cartIsShow && <Cart onClose={IsHinddenHandler} />}
     <div>
       <Header onShowCart = {IsShownHandler} />
@@ -53,7 +53,7 @@ function App() {
       <Summary />
     </div>
     <ListItems DummyMealsList={DummyMealsList} />
-    </Fragment>
+    </CartProvider>
     
   );
 }
